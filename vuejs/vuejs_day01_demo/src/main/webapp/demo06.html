@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>按键修饰符</title>
+    <script src="js/vue-2.6.10.js"></script>
+</head>
+<body>
+
+<!--【需求】：在输入框中，如果输入回车键，就执行弹出窗口事件（可用于网页登录）。-->
+
+
+<div id="app">
+    <input type="text" name="enter" @keydown.enter="fun1($event)">
+</div>
+</body>
+</html>
+<script>
+
+    //new model
+    new Vue({
+
+        el:"#app",
+
+        data:{
+
+
+        },
+
+        methods:{
+
+            fun1:function () {
+
+                alert("屠龙宝刀点击(enter)就送")
+            }
+
+
+
+            /* 第二种方式弹窗
+            fun1:function (e) {
+
+                var keyCode = e.keyCode;
+
+                if (keyCode == 13){
+                    alert("输入键enter")
+                }
+            }*/
+        }
+    })
+</script>

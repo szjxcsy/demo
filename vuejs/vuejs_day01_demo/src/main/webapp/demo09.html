@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单回显</title>
+    <script src="js/vue-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+
+    用户:<input type="text" name="username" v-model="user.username"><br/>
+    密码:<input type="text" name="password" v-model="user.password"><br/>
+    <input type="submit" value="提交" @click="fun"><br/>
+</div>
+</body>
+</html>
+<script>
+    /*【需求】：使用vue赋值json数据，并显示到页面的输入框中（表单回显）。
+
+          点击提交按钮：
+
+          测试：改变输入框的值，同时验证模型的数据发生改变。
+
+	      测试：改变json数据，验证同时输入框的内容也发生改变。
+
+*/
+    new Vue({
+
+        el:"#app",
+
+        data:{
+
+            user:{
+                username:"tom",
+                password:"123"
+            }
+        },
+        methods:{
+
+            fun:function () {
+
+                alert(this.user.username+ "  " +this.user.password);
+
+                //this.user.username="阿狸";
+                //this.user.password="1314"
+
+            }
+        }
+    })
+</script>

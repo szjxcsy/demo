@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue-2.6.10.js"></script>
+
+
+</head>
+<body>
+
+<div id="divId">
+
+    <!--{{}}} 用于显示数据-->
+    {{message}}<br/>
+    {{message1}}<br/>
+    {{message2+90}}<br/> <!--基础运算-->
+    {{message2>5?"大于5":"小于5"}}<br/><!--三元运算符-->
+
+
+</div>
+
+</body>
+</html>
+<script>
+    new Vue({
+
+        el:"#divId", //表示当前vue接管了div对象
+
+        /*定义模型*/
+        data:{
+
+            message2:10,
+            message:"哈哈哈哈哈啊哈哈哈啊哈哈哈啊哈哈哈",
+            message1:"hello"
+        },
+
+        /*methods:函数*/
+        methods:{
+
+        }
+    })
+
+</script>

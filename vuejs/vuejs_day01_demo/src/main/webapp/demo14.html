@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vuejs中axios数据调用</title>
+    <script src="js/vue-2.6.10.js"></script>
+    <script src="js/axios-0.19.0.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+</div>
+</body>
+</html>
+
+
+<script>
+   var vm = new Vue({
+        el:"#app",
+
+        data:{
+
+            message:"helloWord"
+
+        },
+
+       methods:{
+
+            init:function () {
+
+                //alert("传递参数是: "+this.message);
+
+                axios.get("./data/user.json").then(function (response) {
+
+
+                    alert(response);
+
+                    /*response.data 获得对象*/
+                    alert(response.data);
+
+                    /*Json对象转换成Json字符串*/
+                    alert(JSON.stringify(response.data));
+
+                    /*获得数据中索引为0,的名字*/
+                    alert(response.data[0].username);
+
+                    /*获取到的数据打印到控制台*/
+                    console.log(response)
+
+                }).catch(function (error) {
+
+
+                }).finally(function () {
+
+
+                })
+
+            }
+       },
+
+
+       /*钩子函数*/
+       created:function () {
+           this.init();
+       }
+       
+    })
+</script>

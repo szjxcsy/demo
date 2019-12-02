@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击改变</title>
+    <script src="js/vue-2.6.10.js"></script>
+
+
+</head>
+<body>
+
+<div id="updatId">
+
+    {{message}}
+
+    <button @click="fun('good')">改变</button>
+
+</div>
+</body>
+</html>
+<script>
+
+   var vm = new Vue({
+        el:"#updatId",
+
+
+        data:{
+            message:"你好啊"  //模型,封装数据
+
+        },
+        methods:{
+
+            /*msg 表示的是fun('good')这个参数*/
+            fun:function (msg) {
+
+                /*将这个参数赋值给message*/
+                this.message=msg;
+            }
+
+        }
+
+
+
+    });
+</script>

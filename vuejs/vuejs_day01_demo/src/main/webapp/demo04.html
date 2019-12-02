@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移入事件</title>
+    <script src="js/vue-2.6.10.js"></script>
+
+    <style>
+
+        #div{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+
+    <div id="div" @mouseover="fun1" style="width: 70%;height:80%">
+        12345
+        <textarea @mouseover="fun2($event)">abc</textarea>
+    </div>
+
+</div>
+</body>
+</html>
+<script>
+    new Vue({
+
+        el:"#app",
+
+        data:{
+
+        },
+
+        methods:{
+            fun1:function () {
+                alert("div区域")
+            },
+
+            fun2:function(e){
+
+                alert("textarea区域...");
+
+                //阻止冒泡 (如果2个方法重叠,阻止上一层fun1的执行)
+                e.stopPropagation()
+            }
+
+        }
+    })
+</script>

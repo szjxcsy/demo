@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>事件修饰符</title>
+    <script src="js/vue-2.6.10.js"></script>
+
+</head>
+<body>
+
+<div id="add">
+
+    <!--v-on:submit.prevent :阻止表单提交-->
+    <form v-on:submit.prevent action="http://www.itcast.cn">
+        <button>提交</button>
+    </form>
+
+    <div @click="fun1">
+        <!--@click.stop 阻止上一层事件(alert弹窗事件)执行-->
+        <a @click.stop href="http://www.itcast.cn">itcast</a>
+    </div>
+</div>
+
+</body>
+</html>
+    <!--
+        【需求】：在表单中，点击“提交”按钮，阻止执行（.prevent）；
+        在超链接中，点击url，阻止上一层事件执行（.stop）
+    -->
+<script>
+
+var vm = new Vue({
+
+    el:"#add",
+
+    data:{
+
+    },
+
+    methods:{
+
+        fun1:function () {
+
+            alert("hello")
+        }
+
+    }
+})
+
+</script>
