@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="vuejs_day01_demo:war">
+    <output-path>$PROJECT_DIR$/vuejs_day01_demo/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>vuejs_day01_demo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="vuejs_day01_demo-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="vuejs_day01_demo:war exploded" />
+    </root>
+  </artifact>
+</component>
